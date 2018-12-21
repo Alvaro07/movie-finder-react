@@ -1,0 +1,26 @@
+/**
+ * Base styles
+ */
+ 
+ *, *:before, *:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--roboto: 'Roboto', sans-serif;
+}
+
+html, 
+body {
+	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.app {
+	height: 100%;
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+	color: #333;
+} 
+
