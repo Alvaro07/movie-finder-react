@@ -1,20 +1,29 @@
+export const fetchTempSuccess = data => ({ type: "FETCH_SUCCESS", data: data })
+export const fetchTempLoading = () => ({ type: "FETCH_LOADING" })
+export const fetchTempError = () => ({ type: "FETCH_ERROR" })
+export const searchValue = (e) => ({ type: "SEARCH_UPDATE", value: e.target.value })
 
-// import { handleNumber } from './actions/handleNumber';
-// export const handleNumber = (e, number) => ({ type: "NUMBERCLICK", number: number })
 
 export const reducer = (state, action) => {
+    
     let newState = { ...state };
 
     switch (action.type){
 
-        case 'case1':
-            return state
+        case "SEARCH_UPDATE":
+            return {...newState, searchValue: action.value };
 
-        case 'case2':
-            return state
+        case "FETCH_SUCCESS":
+            return {...newState, data: state.data, isLoading: false };
+
+        case "FETCH_LOADING":
+            return {...newState, isLoading: true };
+
+        case "FETCH_ERROR":
+            return {...newState, error: true };
 
         default:
-            return state        
+            return newState        
 
     }
 

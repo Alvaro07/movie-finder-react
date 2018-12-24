@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 class Menu extends React.Component {
@@ -8,8 +8,8 @@ class Menu extends React.Component {
         return (
             <nav className="nav">
                 <ul className="nav__list">
-                    <li><Link className="nav__link" to="/films/">Films</Link></li>
-                    <li><Link className="nav__link" to="/tv-series/">TV Series</Link></li>
+                    <li><NavLink  className="nav__link" activeClassName='is-active' to="/films/">Films</NavLink ></li>
+                    <li><NavLink  className="nav__link" activeClassName='is-active' to="/tv-series/">TV Series</NavLink ></li>
                 </ul>
             </nav>
         )

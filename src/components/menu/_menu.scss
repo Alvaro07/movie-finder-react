@@ -22,7 +22,8 @@
                 color: #333;
                 text-decoration: none;
 
-                &:hover {
+                &:hover,
+                &.is-active {
                     color: #22848C;   
                 }
             }

@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { reducer } from './reducer/reducer';
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from 'redux-thunk';
 
 import App from './components/App/App';
 import './index.scss';
@@ -12,13 +13,18 @@ import './index.scss';
  * Initial state
  */
 
-let initialState = {};
+let initialState = {
+    dataSearch: null,
+    data: null,
+    isLoading: false,
+    error: null
+};
 
 /**
  * Redux store
  */
 
-let store = createStore(reducer, initialState);
+let store = createStore(reducer, initialState, applyMiddleware(thunk));
 
 /**
  * Render
