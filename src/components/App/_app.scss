@@ -6,8 +6,20 @@
 	height: 100%;
 	width: 100%;
 	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex: 1;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
-	padding: 30px;
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+	padding: 20px;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid #dddfe2;
 }

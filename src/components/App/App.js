@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchField from '../SearchField/SearchField';
+import Menu from '../Menu/Menu';
 
 // App component
 
@@ -12,7 +13,15 @@ class App extends React.Component {
 	render(){
 		return(
 			<div className="app-wrap">
-				<SearchField />
+				<header className="header">
+					<Menu />
+				
+				</header>
+				
+				<main className="main">
+					<SearchField />
+				
+				</main>
         
 			</div>	
 		)

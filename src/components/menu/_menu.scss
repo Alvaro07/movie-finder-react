@@ -1,0 +1,30 @@
+/**
+ * Navigation menu
+ */
+
+.nav {
+    padding: 20px;
+
+    &__list {
+        display: flex;
+
+        & li {
+            font-family: var(--roboto);
+            font-size: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .1s all ease;
+            
+            &:hover {
+                color: #22848C;   
+            }
+            
+            &:first-child {
+                margin-right: 40px;
+            }
+
+            
+        }
+
+    }
+}

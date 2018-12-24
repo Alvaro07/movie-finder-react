@@ -1,13 +1,17 @@
-import React from 'React';
+import React from 'react';
 
 class Menu extends React.Component {
+    
     render(){
         return (
             <nav className="nav">
                 <ul className="nav__list">
-                    <li></li>
+                    <li>Films</li>
+                    <li>TV Series</li>
                 </ul>
             </nav>
         )
     }
 }
+
+export default Menu;
