@@ -26,6 +26,7 @@ let initialState = {
 
 let store = createStore(reducer, initialState, applyMiddleware(thunk));
 
+
 /**
  * Render
  */

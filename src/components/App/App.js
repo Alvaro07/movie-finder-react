@@ -53,7 +53,6 @@ class App extends React.Component {
 
 
 const mapStateToProps = state => ({ state });
-
 const mapDispatchToProps = (dispatch) => ({
 	getData: (state) => dispatch( fetchData(state) ),
 	handleKeyUp: (e) => dispatch( searchValue(e) )
