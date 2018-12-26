@@ -11,10 +11,10 @@ export const reducer = (state, action) => {
     switch (action.type){
 
         case "SEARCH_UPDATE":
-            return {...newState, searchValue: action.value };
+            return {...newState, dataSearch: action.value };
 
         case "FETCH_SUCCESS":
-            return {...newState, data: state.data, isLoading: false };
+            return {...newState, data: action.data, isLoading: false };
 
         case "FETCH_LOADING":
             return {...newState, isLoading: true };

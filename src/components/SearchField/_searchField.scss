@@ -4,11 +4,18 @@
  
  .search-field {
     width: 100%;
-    max-width: 780px;
     display: flex;
-    padding: 10px;
-    background-color:rgba(#CFD1DB, .6);
-    border-radius: 10px;
+    justify-content: center;
+    
+    &__wrap {
+        width: 100%;
+        max-width: 780px;
+        padding: 10px;
+        background-color:rgba(#CFD1DB, .6);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+    }
 
     &__input {
         flex: 1;

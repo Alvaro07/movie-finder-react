@@ -21,10 +21,16 @@ let initialState = {
 };
 
 /**
+ * Redux Devtools
+ */
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+
+/**
  * Redux store
  */
 
-let store = createStore(reducer, initialState, applyMiddleware(thunk));
+let store = createStore(reducer, initialState, composeEnhancers(applyMiddleware(thunk)));
 
 
 /**

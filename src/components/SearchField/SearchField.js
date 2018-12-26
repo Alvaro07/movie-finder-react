@@ -13,8 +13,10 @@ class SearchField extends React.Component {
 
         return(
             <div className="search-field">
-                <input className="search-field__input" placeholder={`Search a ${typeSearch}...`} type="text" onKeyUp={this.props.onKeyUp}  />
-                <button className="search-field__button" onClick={this.props.onClick} >Search</button>
+                <div className="search-field__wrap">
+                    <input className="search-field__input" placeholder={`Search a ${typeSearch}...`} type="text" onKeyUp={this.props.onKeyUp}  />
+                    <button className="search-field__button" onClick={this.props.onClick} >Search</button>
+                </div>
             </div>
         )
     }

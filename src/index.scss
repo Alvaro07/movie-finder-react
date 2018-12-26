@@ -1,6 +1,10 @@
+@import 'styles/settings/variables.scss';
+@import 'styles/settings/mixins.scss';
+
 @import 'vendor/reset.scss';
 @import 'styles/base.scss';
 
 @import 'components/App/app.scss';
 @import 'components/Menu/menu.scss';
 @import 'components/SearchField/searchField.scss'; 
+@import 'components/Results/results.scss'; 

@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchField from '../SearchField/SearchField';
 import Menu from '../Menu/Menu';
+import Results from '../Results/Results';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import { fetchData } from "../../reducer/actions/fetchData";
@@ -42,6 +43,11 @@ class App extends React.Component {
 							<Redirect from="/" to="/films" />
 
 						</Switch>
+
+
+						{ this.props.state.data && 
+							<Results />
+						}
 					
 					</main>
 				</div>	
