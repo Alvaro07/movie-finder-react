@@ -1,13 +1,13 @@
-export const searchAction = (newState, actionData, actionType, actionPage) => {
+export const searchAction = (newState, actionData, moreResults, actionPage, typeSearch) => {
     
-
-    if ( actionType === "search") {
+    if ( !moreResults) {
         
         return {...newState, 
             totalResults: actionData.totalResults, 
             data: actionData.Search, 
             isLoading: false,
-            pageSearch: 1
+            pageSearch: 1,
+            typeSearch: typeSearch
         }
 
     } else {
@@ -16,7 +16,8 @@ export const searchAction = (newState, actionData, actionType, actionPage) => {
             totalResults: actionData.totalResults, 
             data: newState.data.concat(actionData.Search), 
             isLoading: false, 
-            pageSearch: actionPage
+            pageSearch: actionPage,
+            typeSearch: typeSearch
         }
 
     }

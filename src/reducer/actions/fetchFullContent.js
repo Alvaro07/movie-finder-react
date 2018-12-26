@@ -1,23 +1,23 @@
-import { fetchTempLoading, fetchTempSuccess, fetchTempError } from '../reducer';
+// import { fetchTempLoading, fetchTempSuccess, fetchTempError } from '../reducer';
 
-export const fetchFullContent = (state, id) => dispatch => {
+// export const fetchFullContent = (state, id) => dispatch => {
 
-    const url = `http://www.omdbapi.com/?apikey=${APIKEY}&i=${id}` 
+//     const url = `http://www.omdbapi.com/?apikey=${APIKEY}&i=${id}` 
 
-    dispatch(fetchTempLoading());
+//     dispatch(fetchTempLoading());
     
-    fetch(url)
-        .then( data => data.json())
-        .then( json => {
+//     fetch(url)
+//         .then( data => data.json())
+//         .then( json => {
             
-            const data = json;
-            dispatch(fetchTempSuccess(data))
+//             const data = json;
+//             dispatch(fetchTempSuccess(data))
             
-        })
-        .catch( error => {
-            dispatch(fetchTempError())
-        })
+//         })
+//         .catch( error => {
+//             dispatch(fetchTempError())
+//         })
 
-};
+// };
 
-export default fetchFullContent;
+// export default fetchFullContent;

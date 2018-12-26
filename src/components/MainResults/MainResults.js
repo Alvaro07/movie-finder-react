@@ -25,7 +25,7 @@ class MainResults extends React.Component {
 
 				<SearchField 
 					typeSearch={this.props.type}
-					onClick={()=> this.props.getData(this.props.state, "search", null)} 
+					onClick={()=> this.props.getData(this.props.state, false, null, this.props.type)} 
 					onKeyUp={(e)=> this.props.handleKeyUp(e) } />
 
 				
@@ -48,7 +48,7 @@ class MainResults extends React.Component {
 
 const mapStateToProps = state => ({ state });
 const mapDispatchToProps = (dispatch) => ({
-	getData: (state, type, page) => dispatch( fetchData(state, type, page) ),
+	getData: (state, moreResults, page, typeSearch) => dispatch( fetchData(state, moreResults, page, typeSearch) ),
 	handleKeyUp: (e) => dispatch( searchValue(e) )
 });
 

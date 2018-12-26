@@ -20,7 +20,8 @@ let initialState = {
     pageSearch: 1,
     data: null,
     isLoading: false,
-    error: null
+    error: null,
+    typeSearch: "movie"
 };
 
 /**

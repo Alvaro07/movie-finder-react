@@ -14,7 +14,7 @@ const ResultsItem = (props) => {
 
     return (
         <div className="results__item">
-            <Link to={`./full-content/${props.link}`} ><div className="results__item__image" style={imgStyle}></div></Link>
+            <Link to={`/full-content/${props.link}`} ><div className="results__item__image" style={imgStyle}></div></Link>
             <div className="results__item__content">
                 <h3 className="results__item__title">{props.title}</h3>
             </div>
@@ -42,11 +42,10 @@ class Results extends React.Component {
                         <li key={i}><ResultsItem link={value.imdbID} poster={value.Poster} title={value.Title}/></li>
                     )}
                 </ul>
-                
 
                 { isMoreResults &&
                     <div className="results__actions">
-                        <button className="results__actions__more" onClick={()=> this.props.moreResults(this.props.state, null, page)}>More results</button>
+                        <button className="results__actions__more" onClick={()=> this.props.moreResults(this.props.state, true, page, this.props.state.typeSearch)}>More results</button>
                     </div>
                 }
 
@@ -60,7 +59,7 @@ class Results extends React.Component {
 
 const mapStateToProps = state => ({ state });
 const mapDispatchToProps = (dispatch) => ({
-	moreResults: (state, type, page) => dispatch( fetchData(state, type, page) )
+	moreResults: (state, moreResults, page, typeSearch) => dispatch( fetchData(state, moreResults, page, typeSearch) )
 });
 
 export default connect(
