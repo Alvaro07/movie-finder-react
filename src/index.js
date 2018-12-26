@@ -14,6 +14,7 @@ import './index.scss';
  */
 
 let initialState = {
+    totalResults: null,
     dataSearch: null,
     pageSearch: 1,
     data: null,

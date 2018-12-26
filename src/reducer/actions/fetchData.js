@@ -10,8 +10,8 @@ export const fetchData = (state, page) => dispatch => {
     fetch(url)
         .then( data => data.json())
         .then( json => {
-
-            const data = json.Search;
+            
+            const data = json;
             dispatch(fetchTempSuccess(data, page))
             
         })

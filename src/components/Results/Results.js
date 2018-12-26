@@ -31,8 +31,10 @@ const ResultsItem = (props) => {
 class Results extends React.Component {
 
     render(){
+        
         const page = this.props.state.pageSearch + 1;
-
+        let isMoreResults = 10 * this.props.state.pageSearch < parseInt(this.props.state.totalResults) ? true : false;
+        
         return(
             <section className="results">
                 <ul className="results__list">
@@ -41,9 +43,12 @@ class Results extends React.Component {
                     )}
                 </ul>
                 
-                <div className="results__actions">
-                    <button className="results__actions__more" onClick={()=> this.props.moreResults(this.props.state, page)}>More results</button>
-                </div>
+
+                { isMoreResults &&
+                    <div className="results__actions">
+                        <button className="results__actions__more" onClick={()=> this.props.moreResults(this.props.state, page)}>More results</button>
+                    </div>
+                }
 
             </section>
         )
