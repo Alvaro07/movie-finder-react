@@ -49,6 +49,8 @@ class App extends React.Component {
 									onKeyUp={(e)=> this.props.handleKeyUp(e) } /> } 
 								/>
 
+							
+
 							<Redirect from="/" to="/films" />
 
 						</Switch>
