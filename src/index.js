@@ -4,6 +4,7 @@ import { reducer } from './reducer/reducer';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from 'redux-thunk';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './components/App/App';
 import './index.scss';
@@ -39,4 +40,10 @@ let store = createStore(reducer, initialState, composeEnhancers(applyMiddleware(
  * Render
  */
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>, 
+    document.getElementById('root'));
