@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { fetchData } from "../../reducer/actions/fetchData";
+import { Link } from 'react-router-dom';
 
 /**
  * Functional Component => Results Item
@@ -8,13 +9,12 @@ import { fetchData } from "../../reducer/actions/fetchData";
 
 const ResultsItem = (props) => {
 
-    
     const urlImage = props.poster === "N/A" ? 'https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260' : props.poster;
     const imgStyle = { backgroundImage: 'url(' + urlImage + ')' };
 
     return (
         <div className="results__item">
-            <div className="results__item__image" style={imgStyle}></div>
+            <Link to={`./full-content/${props.link}`} ><div className="results__item__image" style={imgStyle}></div></Link>
             <div className="results__item__content">
                 <h3 className="results__item__title">{props.title}</h3>
             </div>
@@ -31,7 +31,7 @@ const ResultsItem = (props) => {
 class Results extends React.Component {
 
     render(){
-        
+
         const page = this.props.state.pageSearch + 1;
         let isMoreResults = 10 * this.props.state.pageSearch < parseInt(this.props.state.totalResults) ? true : false;
         
@@ -39,14 +39,14 @@ class Results extends React.Component {
             <section className="results">
                 <ul className="results__list">
                     {this.props.state.data.map((value, i) =>
-                        <li key={i}><ResultsItem poster={value.Poster} title={value.Title}/></li>
+                        <li key={i}><ResultsItem link={value.imdbID} poster={value.Poster} title={value.Title}/></li>
                     )}
                 </ul>
                 
 
                 { isMoreResults &&
                     <div className="results__actions">
-                        <button className="results__actions__more" onClick={()=> this.props.moreResults(this.props.state, page)}>More results</button>
+                        <button className="results__actions__more" onClick={()=> this.props.moreResults(this.props.state, null, page)}>More results</button>
                     </div>
                 }
 
@@ -60,7 +60,7 @@ class Results extends React.Component {
 
 const mapStateToProps = state => ({ state });
 const mapDispatchToProps = (dispatch) => ({
-	moreResults: (state, page) => dispatch( fetchData(state, page) )
+	moreResults: (state, type, page) => dispatch( fetchData(state, type, page) )
 });
 
 export default connect(

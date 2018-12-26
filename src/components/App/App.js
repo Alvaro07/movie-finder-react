@@ -19,19 +19,19 @@ class App extends React.Component {
 			<div className="app-wrap">
 				<header className="header">
 					<Menu />
+
 				</header>
 				
 				<main className="main">
 					<Switch>
 						
 						<Route path="/films" render={() => <MainResults type="movie" /> } />
-						<Route path="/tv-series" render={() => <MainResults type="tv serie" /> } />
+						<Route path="/tv-series" render={() => <MainResults type="series" /> } />
 						<Route path="/full-content/:id" render={() => <FullMovie /> } />
 
 						<Redirect from="/" to="/films" />
 
 					</Switch>
-					
 				
 				</main>
 			</div>	
