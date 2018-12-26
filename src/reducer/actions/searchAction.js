@@ -1,5 +1,4 @@
 export const searchAction = (newState, action) => {
-    console.log(action.data);
     
     if ( !action.page) {
         return {...newState, 
