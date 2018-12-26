@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
+import { fetchData } from "../../reducer/actions/fetchData";
 
 /**
  * Functional Component => Results Item
@@ -30,15 +31,20 @@ const ResultsItem = (props) => {
 class Results extends React.Component {
 
     render(){
-        console.log(this.props.items)
-        
+        const page = this.props.state.pageSearch + 1;
+
         return(
             <section className="results">
                 <ul className="results__list">
-                    {this.props.items.map((value, i) =>
+                    {this.props.state.data.map((value, i) =>
                         <li key={i}><ResultsItem poster={value.Poster} title={value.Title}/></li>
                     )}
                 </ul>
+                
+                <div className="results__actions">
+                    <button className="results__actions__more" onClick={()=> this.props.moreResults(this.props.state, page)}>More results</button>
+                </div>
+
             </section>
         )
     }
@@ -47,10 +53,12 @@ class Results extends React.Component {
 }
 
 
-const mapStateToProps = state => ({ items: state.data });
-// const mapDispatchToProps = (dispatch) => ({  });
+const mapStateToProps = state => ({ state });
+const mapDispatchToProps = (dispatch) => ({
+	moreResults: (state, page) => dispatch( fetchData(state, page) )
+});
 
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
 )(Results)

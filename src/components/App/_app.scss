@@ -6,6 +6,8 @@
 	min-height: 100%;
 	width: 100%;
 	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+	display: flex;
+    flex-direction: column;
 }
 
 .main {
@@ -13,6 +15,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	flex: 1;
 }
 
 .header {

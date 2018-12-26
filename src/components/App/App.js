@@ -18,6 +18,13 @@ class App extends React.Component {
 
 	render(){
 
+		let errorLayer = null;
+		if ( this.props.state.data === undefined && this.props.state.isLoading !== true) {
+			errorLayer = <div className="results__error">No results found</div>
+		} else {
+			errorLayer = null;
+		}
+
 		return(
 			<BrowserRouter>
 				<div className="app-wrap">
@@ -45,7 +52,7 @@ class App extends React.Component {
 							<Redirect from="/" to="/films" />
 
 						</Switch>
-									
+
 						{ this.props.state.isLoading && 
 							<Loader />
 						}
@@ -54,9 +61,7 @@ class App extends React.Component {
 							<Results />
 						}
 
-						{ this.props.state.data === undefined && 
-							<div className="results__error">No results found</div>
-						}
+						{errorLayer}
 					
 					</main>
 				</div>	

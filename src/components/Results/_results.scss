@@ -49,13 +49,39 @@
             font-size: 14px;
             padding-bottom: 10px;
         }
-
     }
 
     &__error {
         padding-top: 30px;
         font-size: 16px; 
         font-weight: 700;
+    }
+
+
+
+    /*/ Actions */
+    &__actions {
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+
+        &__more {
+            padding: 10px 40px;
+            background-color: #346272;
+            border: none;
+            border-radius: 5px;
+            
+            font-size: 22px;
+            font-family: var(--roboto);
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            transition: .1s all ease;
+
+            &:hover {
+                background-color: #22848C;
+            }
+        }
     }
 
 }

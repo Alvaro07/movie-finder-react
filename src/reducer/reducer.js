@@ -1,12 +1,13 @@
+import { searchAction } from './actions/searchAction';
+
 /**
  * Reducer functions
  */
 
-export const fetchTempSuccess = data => ({ type: "FETCH_SUCCESS", data: data })
+export const fetchTempSuccess = (data, page) => ({ type: "FETCH_SUCCESS", data: data, page: page })
 export const fetchTempLoading = () => ({ type: "FETCH_LOADING" })
 export const fetchTempError = () => ({ type: "FETCH_ERROR" })
 export const searchValue = (e) => ({ type: "SEARCH_UPDATE", value: e.target.value })
-
 
 export const reducer = (state, action) => {
     
@@ -18,7 +19,7 @@ export const reducer = (state, action) => {
             return {...newState, dataSearch: action.value };
 
         case "FETCH_SUCCESS":
-            return {...newState, data: action.data, isLoading: false };
+            return searchAction(newState, action)
 
         case "FETCH_LOADING":
             return {...newState, isLoading: true };
