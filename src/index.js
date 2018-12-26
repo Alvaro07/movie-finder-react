@@ -15,6 +15,7 @@ import './index.scss';
 
 let initialState = {
     dataSearch: null,
+    pageSearch: 1,
     data: null,
     isLoading: false,
     error: null

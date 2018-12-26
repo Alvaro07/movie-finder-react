@@ -1,3 +1,7 @@
+/**
+ * Reducer functions
+ */
+
 export const fetchTempSuccess = data => ({ type: "FETCH_SUCCESS", data: data })
 export const fetchTempLoading = () => ({ type: "FETCH_LOADING" })
 export const fetchTempError = () => ({ type: "FETCH_ERROR" })

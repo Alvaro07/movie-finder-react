@@ -2,6 +2,7 @@ import React from 'react';
 import SearchField from '../SearchField/SearchField';
 import Menu from '../Menu/Menu';
 import Results from '../Results/Results';
+import Loader from '../Loader/Loader'; 
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import { fetchData } from "../../reducer/actions/fetchData";
@@ -16,6 +17,7 @@ class App extends React.Component {
 	}
 
 	render(){
+
 		return(
 			<BrowserRouter>
 				<div className="app-wrap">
@@ -43,10 +45,17 @@ class App extends React.Component {
 							<Redirect from="/" to="/films" />
 
 						</Switch>
-
+									
+						{ this.props.state.isLoading && 
+							<Loader />
+						}
 
 						{ this.props.state.data && 
 							<Results />
+						}
+
+						{ this.props.state.data === undefined && 
+							<div className="results__error">No results found</div>
 						}
 					
 					</main>

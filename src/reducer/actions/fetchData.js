@@ -3,7 +3,7 @@ import { fetchTempLoading, fetchTempSuccess, fetchTempError } from '../reducer';
 
 export const fetchData = (state) => dispatch => {
     
-    const url = `http://www.omdbapi.com/?apikey=${APIKEY}&s=${state.dataSearch}` 
+    const url = `http://www.omdbapi.com/?apikey=${APIKEY}&s=${state.dataSearch}&page=${state.pageSearch}` 
 
     dispatch(fetchTempLoading());
     

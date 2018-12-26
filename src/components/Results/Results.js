@@ -7,13 +7,16 @@ import { connect } from "react-redux";
 
 const ResultsItem = (props) => {
 
-    const imgStyle = { backgroundImage: 'url(' + props.poster + ')' };
+    
+    const urlImage = props.poster === "N/A" ? 'https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260' : props.poster;
+    const imgStyle = { backgroundImage: 'url(' + urlImage + ')' };
 
     return (
         <div className="results__item">
-            <div className="results__item__image" style={imgStyle}>Image</div>
-            <h3 className="results__item__title">{props.title}</h3>
-            <span className="results__item__link">See more</span>
+            <div className="results__item__image" style={imgStyle}></div>
+            <div className="results__item__content">
+                <h3 className="results__item__title">{props.title}</h3>
+            </div>
         </div>    
     )
 }
@@ -27,7 +30,8 @@ const ResultsItem = (props) => {
 class Results extends React.Component {
 
     render(){
-        // console.log(this.props.items)
+        console.log(this.props.items)
+        
         return(
             <section className="results">
                 <ul className="results__list">
