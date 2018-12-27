@@ -8,6 +8,7 @@ export const fetchTempSuccess = (data, initialSearch, page, typeSearch) => ({ ty
 export const fetchTempLoading = () => ({ type: "FETCH_LOADING" })
 export const fetchTempError = () => ({ type: "FETCH_ERROR" })
 export const searchValue = (e) => ({ type: "SEARCH_UPDATE", value: e.target.value })
+export const resetResults = () => ({ type: "RESET_RESULTS" })
 
 /**
  * Reducer
@@ -31,6 +32,9 @@ export const reducer = (state, action) => {
 
         case "FETCH_ERROR":
             return {...newState, error: true };
+        
+        case "RESET_RESULTS":
+            return {...newState, data: null };
 
         default:
             return newState        

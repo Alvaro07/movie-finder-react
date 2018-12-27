@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from "react-redux";
 import { fetchData } from "../../reducer/actions/fetchData";
-import { searchValue } from '../../reducer/reducer';
+import { searchValue, resetResults } from '../../reducer/reducer';
 
 import SearchField from '../SearchField/SearchField';
 import Results from '../Results/Results';
@@ -10,6 +10,13 @@ import Results from '../Results/Results';
 
 class MainResults extends React.Component {
 	
+	componentDidUpdate(prevProps) {
+		if (this.props.type !== prevProps.type) {
+			this.props.resetResults();
+		}
+	}
+
+
 	render(){
 		
 		let errorLayer = null;
@@ -43,7 +50,8 @@ class MainResults extends React.Component {
 const mapStateToProps = state => ({ state });
 const mapDispatchToProps = (dispatch) => ({
 	getData: (state, initialSearch, page, typeSearch) => dispatch( fetchData(state, initialSearch, page, typeSearch) ),
-	handleKeyUp: (e) => dispatch( searchValue(e) )
+	handleKeyUp: (e) => dispatch( searchValue(e) ),
+	resetResults: () => dispatch( resetResults() )
 });
 
 export default connect(
