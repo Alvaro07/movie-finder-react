@@ -13,13 +13,14 @@
         justify-content: center;
         max-width: 460px;
         background-color:rgba(#CFD1DB, .6);
-        padding: 8px;
+        padding: 6px;
         border-radius: 8px;
+        
 
         @include mediaTablet {
             max-width: 780px;
-            padding: 10px;
-            border-radius: 10px;
+            border-radius: 7px;
+            border-radius: 12px;
         }
     }
 

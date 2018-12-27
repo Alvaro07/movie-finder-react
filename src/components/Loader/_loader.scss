@@ -1,6 +1,11 @@
-.results__loading {
+.loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
     svg {
-        width: 100px;
+        width: 140px;
         height: 100px;
+        padding-left: 40px;
     }
 }

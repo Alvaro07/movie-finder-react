@@ -10,6 +10,15 @@
     flex-direction: column;
 }
 
+.header {
+	display: flex;
+	justify-content: center;
+	position: sticky;
+	top: 0;
+	background-color: white;
+	border-bottom: 1px solid #dddfe2;
+}
+
 .main {
 	padding: 50px 20px;
 	display: flex;
@@ -19,14 +28,5 @@
 	flex: 1;
 }
 
-.header {
-	display: flex;
-	justify-content: center;
-	
-	position: sticky;
-	top: 0;
-	
-	background-color: white;
-	border-bottom: 1px solid #dddfe2;
-}
+
 

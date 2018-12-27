@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { fetchData } from "../../reducer/actions/fetchData";
 import { Link } from 'react-router-dom';
+import Loader from '../Loader/Loader'; 
 
 /**
  * Functional Component => Results Item
@@ -42,6 +43,10 @@ class Results extends React.Component {
                         <li key={i}><ResultsItem link={value.imdbID} poster={value.Poster} title={value.Title}/></li>
                     )}
                 </ul>
+
+                { this.props.state.isLoading && 
+					<Loader />
+                }
 
                 { isMoreResults &&
                     <div className="results__actions">

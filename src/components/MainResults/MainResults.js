@@ -6,7 +6,6 @@ import { searchValue } from '../../reducer/reducer';
 
 import SearchField from '../SearchField/SearchField';
 import Results from '../Results/Results';
-import Loader from '../Loader/Loader'; 
 
 
 class MainResults extends React.Component {
@@ -32,11 +31,6 @@ class MainResults extends React.Component {
 				{ this.props.state.data && 
 					<Results />
 				}
-
-				{ this.props.state.isLoading && 
-					<Loader />
-				}
-				
 
 				{errorLayer}
 
