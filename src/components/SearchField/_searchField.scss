@@ -48,6 +48,10 @@
             color: rgba(#333, .4)
         }
 
+        &:focus-within {
+            outline: none;
+        }
+
     }
 
     &__button  {
@@ -72,6 +76,10 @@
 
         &:hover {
             background-color: #22848C;
+        }
+
+        &:focus-within {
+            outline: none;
         }
 
         &--disabled {

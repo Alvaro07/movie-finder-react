@@ -1,7 +1,7 @@
 import APIKEY from '../../apikey';
 import { fetchTempLoading, fetchTempSuccess, fetchTempError } from '../reducer';
 
-export const fetchData = (state, moreResults, page, typeSearch) => dispatch => {
+export const fetchData = (state, initialSearch, page, typeSearch) => dispatch => {
 
     const url = `http://www.omdbapi.com/?apikey=${APIKEY}&s=${state.dataSearch}&page=${page}&type=${typeSearch}` 
 
@@ -12,7 +12,7 @@ export const fetchData = (state, moreResults, page, typeSearch) => dispatch => {
         .then( json => {
             
             const data = json;
-            dispatch(fetchTempSuccess(data, moreResults, page, typeSearch))
+            dispatch(fetchTempSuccess(data, initialSearch, page, typeSearch))
             
         })
         .catch( error => {

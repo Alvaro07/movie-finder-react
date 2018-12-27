@@ -1,6 +1,6 @@
-export const searchAction = (newState, actionData, moreResults, actionPage, typeSearch) => {
+export const searchAction = (newState, actionData, initialSearch, actionPage, typeSearch) => {
     
-    if ( !moreResults) {
+    if ( initialSearch) {
         
         return {...newState, 
             totalResults: actionData.totalResults, 

@@ -34,8 +34,8 @@ class Results extends React.Component {
     render(){
 
         const page = this.props.state.pageSearch + 1;
-        let isMoreResults = 10 * this.props.state.pageSearch < parseInt(this.props.state.totalResults) ? true : false;
-        
+        const isMoreResults = 10 * this.props.state.pageSearch < parseInt(this.props.state.totalResults) ? true : false;
+
         return(
             <section className="results">
                 <ul className="results__list">
@@ -50,7 +50,7 @@ class Results extends React.Component {
 
                 { isMoreResults &&
                     <div className="results__actions">
-                        <button className="results__actions__more" onClick={()=> this.props.moreResults(this.props.state, true, page, this.props.state.typeSearch)}>More results</button>
+                        <button className="results__actions__more" onClick={()=> this.props.moreResults(this.props.state, false, page, this.props.state.typeSearch)}>More results</button>
                     </div>
                 }
 
@@ -64,7 +64,7 @@ class Results extends React.Component {
 
 const mapStateToProps = state => ({ state });
 const mapDispatchToProps = (dispatch) => ({
-	moreResults: (state, moreResults, page, typeSearch) => dispatch( fetchData(state, moreResults, page, typeSearch) )
+	moreResults: (state, initialSearch, page, typeSearch) => dispatch( fetchData(state, initialSearch, page, typeSearch) )
 });
 
 export default connect(
