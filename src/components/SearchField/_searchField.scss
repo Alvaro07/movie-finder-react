@@ -73,6 +73,11 @@
         &:hover {
             background-color: #22848C;
         }
+
+        &--disabled {
+            pointer-events: none;
+            opacity: .8;
+        }
     }
 }
 
