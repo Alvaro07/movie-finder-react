@@ -3,13 +3,19 @@
 */
 
 @mixin mediaTablet {
-    @media (min-width: #{$breakTablet}) { @content }
-};
+  @media (min-width: #{$breakTablet}) {
+    @content;
+  }
+}
 
 @mixin mediaDesktop {
-    @media (min-width: #{$breakDesktop}) { @content }
-};
+  @media (min-width: #{$breakDesktop}) {
+    @content;
+  }
+}
 
 @mixin mediaLarge {
-    @media (min-width: #{$breakLarge}) { @content }
-};
+  @media (min-width: #{$breakLarge}) {
+    @content;
+  }
+}

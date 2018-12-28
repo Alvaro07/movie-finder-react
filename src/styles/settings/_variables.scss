@@ -2,19 +2,18 @@
  * Variables
  */
 
-$breakTablet: 640px; 
-$breakDesktop: 1024px; 
-$breakLarge: 1280px; 
+$breakTablet: 640px;
+$breakDesktop: 1024px;
+$breakLarge: 1280px;
 
 /**
 * Custom propierties Variables
 */
 
 :root {
-	--roboto: 'Roboto', sans-serif;
-	--lightGrey: #dddfe2;
-	--darkGrey: #333;
-	--turquoise: #22848C;
-	--green: #346272;
+  --roboto: "Roboto", sans-serif;
+  --lightGrey: #dddfe2;
+  --darkGrey: #333;
+  --turquoise: #22848c;
+  --green: #346272;
 }
-

@@ -3,38 +3,35 @@
  */
 
 .nav {
-    padding: 20px;
+  padding: 20px;
 
-    &__list {
-        display: flex;
+  &__list {
+    display: flex;
 
-        & li {
-            &:first-child {
-                margin-right: 40px;
-            }
+    & li {
+      &:first-child {
+        margin-right: 40px;
+      }
 
-            .nav__link {
-                font-family: var(--roboto);
-                font-size: 20px;
-                font-weight: 800;
-                cursor: pointer;
-                transition: .1s all ease;
-                color: var(--turquoise); 
-                text-decoration: none;
+      .nav__link {
+        font-family: var(--roboto);
+        font-size: 20px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.1s all ease;
+        color: var(--turquoise);
+        text-decoration: none;
 
-                &:hover,
-                &.is-active {
-                    color: var(--darkGrey);
-                }
-
-                &.is-active {
-                    pointer-events: none;
-                    cursor: default;
-                }
-            }
-
-            
+        &:hover,
+        &.is-active {
+          color: var(--darkGrey);
         }
 
+        &.is-active {
+          pointer-events: none;
+          cursor: default;
+        }
+      }
     }
+  }
 }

@@ -1,31 +1,30 @@
 /**
  * Base styles
  */
- 
- *, *:before, *:after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
-html, 
+html,
 body,
 .app {
-	height: 100%;
-	font-family: 'Open Sans', sans-serif;
-	color: var(--darkGrey);
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  color: var(--darkGrey);
 }
 
 a {
-	color: var(--green);
-	&:hover {
-		color: var(--turquoise)
-	}
+  color: var(--green);
+  &:hover {
+    color: var(--turquoise);
+  }
 }
-
 
 .bold {
-	font-weight: 700;
+  font-weight: 700;
 }
-

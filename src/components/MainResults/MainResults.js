@@ -1,51 +1,50 @@
-import React from 'react';
+import React from "react";
 
 import { connect } from "react-redux";
 import { fetchData } from "../../reducer/actions/fetchData";
-import { searchValue } from '../../reducer/reducer';
+import { searchValue } from "../../reducer/reducer";
 
-import SearchField from '../SearchField/SearchField';
-import Results from '../Results/Results';
+import SearchField from "../SearchField/SearchField";
+import Results from "../Results/Results";
 
 class MainResults extends React.Component {
+  render() {
+    let errorLayer = null;
+    if (
+      this.props.state.data === undefined &&
+      this.props.state.isLoading !== true
+    ) {
+      errorLayer = <div className="results__error">No results found</div>;
+    } else {
+      errorLayer = null;
+    }
 
-	render(){
-		
-		let errorLayer = null;
-		if ( this.props.state.data === undefined && this.props.state.isLoading !== true ) {
-			errorLayer = <div className="results__error">No results found</div>;
-		} else {
-			errorLayer = null;
-		}
+    return (
+      <React.Fragment>
+        <SearchField
+          typeSearch={this.props.type}
+          onClick={() =>
+            this.props.getData(this.props.state, true, null, this.props.type)
+          }
+          onKeyUp={e => this.props.handleKeyUp(e)}
+        />
 
-		return (
-			<React.Fragment>
+        {this.props.state.data && <Results />}
 
-				<SearchField 
-					typeSearch={this.props.type}
-					onClick={()=> this.props.getData(this.props.state, true, null, this.props.type)} 
-					onKeyUp={(e)=> this.props.handleKeyUp(e) } />
-
-				
-				{ this.props.state.data && 
-					<Results />
-				}
-
-				{errorLayer}
-
-			</React.Fragment>
-				 
-		)
-	}
+        {errorLayer}
+      </React.Fragment>
+    );
+  }
 }
 
 const mapStateToProps = state => ({ state });
-const mapDispatchToProps = (dispatch) => ({
-	getData: (state, initialSearch, page, typeSearch) => dispatch( fetchData(state, initialSearch, page, typeSearch) ),
-	handleKeyUp: (e) => dispatch( searchValue(e) )
+const mapDispatchToProps = dispatch => ({
+  getData: (state, initialSearch, page, typeSearch) =>
+    dispatch(fetchData(state, initialSearch, page, typeSearch)),
+  handleKeyUp: e => dispatch(searchValue(e))
 });
 
 export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-  )(MainResults)
+  mapStateToProps,
+  mapDispatchToProps
+)(MainResults);

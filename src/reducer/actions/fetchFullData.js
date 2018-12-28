@@ -1,24 +1,24 @@
-import APIKEY from '../../apikey';
-import { fetchDataLoading, fetchDataFullSuccess, fetchDataError } from '../reducer';
+import APIKEY from "../../apikey";
+import {
+  fetchDataLoading,
+  fetchDataFullSuccess,
+  fetchDataError
+} from "../reducer";
 
-export const fetchFullData = (id) => dispatch => {
+export const fetchFullData = id => dispatch => {
+  const url = `http://www.omdbapi.com/?apikey=${APIKEY}&i=${id}`;
 
-    const url = `http://www.omdbapi.com/?apikey=${APIKEY}&i=${id}` 
+  dispatch(fetchDataLoading());
 
-    dispatch(fetchDataLoading());
-    
-    fetch(url)
-        .then( data => data.json())
-        .then( json => {
-            
-            const data = json;
-            dispatch(fetchDataFullSuccess(data))
-            
-        })
-        .catch( error => {
-            dispatch(fetchDataError())
-        })
-
+  fetch(url)
+    .then(data => data.json())
+    .then(json => {
+      const data = json;
+      dispatch(fetchDataFullSuccess(data));
+    })
+    .catch(error => {
+      dispatch(fetchDataError());
+    });
 };
 
 export default fetchFullData;

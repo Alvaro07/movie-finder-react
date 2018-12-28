@@ -1,91 +1,88 @@
 /**
  * Search
  */
- 
- .search-field {
-    width: 100%;
+
+.search-field {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__wrap {
+    flex: 1;
     display: flex;
     justify-content: center;
-    
-    &__wrap {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        max-width: 460px;
-        background-color:rgba(#CFD1DB, .6);
-        padding: 6px;
-        border-radius: 8px;
-        
+    max-width: 460px;
+    background-color: rgba(#cfd1db, 0.6);
+    padding: 6px;
+    border-radius: 8px;
 
-        @include mediaTablet {
-            max-width: 780px;
-            border-radius: 7px;
-            border-radius: 12px;
-        }
+    @include mediaTablet {
+      max-width: 780px;
+      border-radius: 7px;
+      border-radius: 12px;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    font-size: 18px;
+    padding: 12px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+
+    @include mediaTablet {
+      padding: 20px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
     }
 
-    &__input {
-        flex: 1;
-        font-size: 18px;
-        padding: 12px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        border: none;
-
-        @include mediaTablet {
-            padding: 20px;
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
-        }
-
-        &::-webkit-input-placeholder { 
-            color: rgba(#333, .4)
-        }
-        &::-moz-input-placeholder { 
-            color: rgba(#333, .4)
-        }
-        &::-ms-input-placeholder { 
-            color: rgba(#333, .4)
-        }
-
-        &:focus-within {
-            outline: none;
-        }
-
+    &::-webkit-input-placeholder {
+      color: rgba(#333, 0.4);
+    }
+    &::-moz-input-placeholder {
+      color: rgba(#333, 0.4);
+    }
+    &::-ms-input-placeholder {
+      color: rgba(#333, 0.4);
     }
 
-    &__button  {
-        font-size: 16px;
-        font-family: var(--roboto);
-        font-weight: 700;
-        color: white;
-        cursor: pointer;
-
-        padding: 12px;
-        border: none;
-        
-        background-color: var(--green);
-        border-top-right-radius: 8px;
-        border-bottom-right-radius: 8px;
-        transition: .1s all ease;
-
-        @include mediaTablet {
-            padding: 20px;
-            font-size: 22px;
-        }
-
-        &:hover {
-            background-color: var(--green);
-        }
-
-        &:focus-within {
-            outline: none;
-        }
-
-        &--disabled {
-            pointer-events: none;
-            opacity: .8;
-        }
+    &:focus-within {
+      outline: none;
     }
+  }
+
+  &__button {
+    font-size: 16px;
+    font-family: var(--roboto);
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+
+    padding: 12px;
+    border: none;
+
+    background-color: var(--green);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: 0.1s all ease;
+
+    @include mediaTablet {
+      padding: 20px;
+      font-size: 22px;
+    }
+
+    &:hover {
+      background-color: var(--green);
+    }
+
+    &:focus-within {
+      outline: none;
+    }
+
+    &--disabled {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+  }
 }
-

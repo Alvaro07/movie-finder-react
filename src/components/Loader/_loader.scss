@@ -1,15 +1,15 @@
 /**
  * Loader styles
  */
- 
- .loader {
-    width: 100%;
-    display: flex;
-    justify-content: center;
 
-    svg {
-        width: 140px;
-        height: 100px;
-        padding-left: 40px;
-    }
+.loader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  svg {
+    width: 140px;
+    height: 100px;
+    padding-left: 40px;
+  }
 }
