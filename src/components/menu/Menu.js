@@ -14,7 +14,7 @@ class Menu extends React.Component {
               className="nav__link"
               onClick={() => this.props.resetResults()}
               activeClassName="is-active"
-              to="/movie-finder-react/films/"
+              to="/films/"
             >
               Films
             </NavLink>
@@ -24,7 +24,7 @@ class Menu extends React.Component {
               className="nav__link"
               onClick={() => this.props.resetResults()}
               activeClassName="is-active"
-              to="/movie-finder-react/tv-series/"
+              to="/tv-series/"
             >
               TV Series
             </NavLink>

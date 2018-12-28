@@ -16,7 +16,7 @@ const ResultsItem = props => {
       : props.poster;
   const imgStyle = { backgroundImage: "url(" + urlImage + ")" };
   const url = props.title.replace(/[^\w\s]/gi, "").replace(/\s/g, "-");
-  const fullUrl = `/movie-finder-react/full-content/${url}?id=${props.link}`;
+  const fullUrl = `/full-content/${url}?id=${props.link}`;
 
   return (
     <div className="results__item">
