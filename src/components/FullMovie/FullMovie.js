@@ -21,7 +21,6 @@ class FullMovie extends React.Component {
             const webSite = this.props.state.fullContent.Website === 'N/A' ? null : this.props.state.fullContent.Website;
             const poster = this.props.state.fullContent.Poster !== 'N/A'? this.props.state.fullContent.Poster : 'https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
 
-            console.log(this.props.state.fullContent)
             return(
                 <div className="full-movie">
 
@@ -44,13 +43,12 @@ class FullMovie extends React.Component {
                         <p className="full-movie__sub"><span className="bold">Director: </span> {this.props.state.fullContent.Director}</p>
                         <p className="full-movie__sub"><span className="bold">Writer: </span> {this.props.state.fullContent.Writer}</p>
                         <p className="full-movie__sub"><span className="bold">Actors: </span> {this.props.state.fullContent.Actors}</p>
-                        <p className="full-movie__sub"><span className="bold">Production: </span> {this.props.state.fullContent.Production}</p>
                         <p className="full-movie__sub"><span className="bold">Awards: </span> {this.props.state.fullContent.Awards}</p>
                         
                         
                         { webSite &&
                             <p className="full-movie__website">
-                                <a href={this.props.state.fullContent.Website} target="_blank">{this.props.state.fullContent.Website}</a>
+                                <a href={this.props.state.fullContent.Website} rel="noopener noreferrer" target="_blank">{this.props.state.fullContent.Website}</a>
                             </p>
                         }
                         

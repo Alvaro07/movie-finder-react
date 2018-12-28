@@ -26,6 +26,11 @@
                 &.is-active {
                     color: var(--darkGrey);
                 }
+
+                &.is-active {
+                    pointer-events: none;
+                    cursor: default;
+                }
             }
 
             
