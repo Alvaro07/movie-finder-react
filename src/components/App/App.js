@@ -20,17 +20,17 @@ class App extends React.Component {
 
         <main className="main">
           <Switch>
-            <Route path="/films" render={() => <MainResults type="movie" />} />
+            <Route path="/movie-finder-react/films" render={() => <MainResults type="movie" />} />
             <Route
-              path="/tv-series"
+              path="/movie-finder-react/tv-series"
               render={() => <MainResults type="series" />}
             />
             <Route
-              path="/full-content/:title"
+              path="/movie-finder-react/full-content/:title"
               render={e => <FullMovie id={e} />}
             />
 
-            <Redirect from="/" to="/films" />
+            <Redirect from="/" to="/movie-finder-react/films" />
           </Switch>
         </main>
       </div>
