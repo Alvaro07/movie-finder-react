@@ -20,12 +20,16 @@
 }
 
 .main {
-	padding: 50px 20px;
+	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	flex: 1;
+
+	@include mediaTablet {
+		padding: 50px 20px;
+	}
 }
 
 

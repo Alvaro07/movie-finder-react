@@ -17,4 +17,15 @@ body,
 	color: var(--darkGrey);
 }
 
+a {
+	color: var(--green);
+	&:hover {
+		color: var(--turquoise)
+	}
+}
+
+
+.bold {
+	font-weight: 700;
+}
 
