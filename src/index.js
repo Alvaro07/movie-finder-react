@@ -21,7 +21,8 @@ let initialState = {
     data: null,
     isLoading: false,
     error: null,
-    typeSearch: "movie"
+    typeSearch: "movie",
+    fullContent: null
 };
 
 /**

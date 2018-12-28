@@ -64,7 +64,7 @@
         padding: 12px;
         border: none;
         
-        background-color: #346272;
+        background-color: var(--green);
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
         transition: .1s all ease;
@@ -75,7 +75,7 @@
         }
 
         &:hover {
-            background-color: #22848C;
+            background-color: var(--green);
         }
 
         &:focus-within {

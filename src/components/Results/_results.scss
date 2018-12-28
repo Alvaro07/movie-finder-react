@@ -73,7 +73,7 @@
 
         &__more {
             padding: 10px 40px;
-            background-color: #346272;
+            background-color: var(--green);
             border: none;
             border-radius: 5px;
             
@@ -85,7 +85,7 @@
             transition: .1s all ease;
 
             &:hover {
-                background-color: #22848C;
+                background-color: var(--turquoise);
             }
         }
     }

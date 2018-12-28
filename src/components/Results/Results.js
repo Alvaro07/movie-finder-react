@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { fetchData } from "../../reducer/actions/fetchData";
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader'; 
+import { resetFullContent } from "../../reducer/reducer";
+import { fetchData } from "../../reducer/actions/fetchData";
+
 
 /**
  * Functional Component => Results Item
@@ -15,7 +17,7 @@ const ResultsItem = (props) => {
 
     return (
         <div className="results__item">
-            <Link to={`/full-content/${props.link}`} ><div className="results__item__image" style={imgStyle}></div></Link>
+            <Link to={`/full-content/${props.link}`} onClick={props.onClick}><div className="results__item__image" style={imgStyle}></div></Link>
             <div className="results__item__content">
                 <h3 className="results__item__title">{props.title}</h3>
             </div>
@@ -40,7 +42,7 @@ class Results extends React.Component {
             <section className="results">
                 <ul className="results__list">
                     {this.props.state.data.map((value, i) =>
-                        <li key={i}><ResultsItem link={value.imdbID} poster={value.Poster} title={value.Title}/></li>
+                        <li key={i}><ResultsItem onClick={() => this.props.resetFullContent()} link={value.imdbID} poster={value.Poster} title={value.Title}/></li>
                     )}
                 </ul>
 
@@ -57,14 +59,13 @@ class Results extends React.Component {
             </section>
         )
     }
-
-
 }
 
 
 const mapStateToProps = state => ({ state });
 const mapDispatchToProps = (dispatch) => ({
-	moreResults: (state, initialSearch, page, typeSearch) => dispatch( fetchData(state, initialSearch, page, typeSearch) )
+    moreResults: (state, initialSearch, page, typeSearch) => dispatch( fetchData(state, initialSearch, page, typeSearch) ),
+    resetFullContent: () => dispatch( resetFullContent() )
 });
 
 export default connect(

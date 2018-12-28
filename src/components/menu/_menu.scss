@@ -19,12 +19,12 @@
                 font-weight: 800;
                 cursor: pointer;
                 transition: .1s all ease;
-                color: #333;
+                color: var(--turquoise); 
                 text-decoration: none;
 
                 &:hover,
                 &.is-active {
-                    color: #22848C;   
+                    color: var(--darkGrey);
                 }
             }
 

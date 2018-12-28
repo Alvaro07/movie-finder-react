@@ -27,7 +27,7 @@ class App extends React.Component {
 						
 						<Route path="/films" render={() => <MainResults type="movie" /> } />
 						<Route path="/tv-series" render={() => <MainResults type="series" /> } />
-						<Route path="/full-content/:id" render={() => <FullMovie /> } />
+						<Route path="/full-content/:id" render={(e) => <FullMovie id={e.match.params.id}  /> } />
 
 						<Redirect from="/" to="/films" />
 
