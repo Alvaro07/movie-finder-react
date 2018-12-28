@@ -6,7 +6,7 @@ import {
 } from "../reducer";
 
 export const fetchFullData = id => dispatch => {
-  const url = `http://www.omdbapi.com/?apikey=${APIKEY}&i=${id}`;
+  const url = `https://www.omdbapi.com/?apikey=${APIKEY}&i=${id}`;
 
   dispatch(fetchDataLoading());
 

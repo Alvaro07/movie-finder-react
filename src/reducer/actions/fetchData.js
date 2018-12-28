@@ -7,7 +7,7 @@ export const fetchData = (
   page,
   typeSearch
 ) => dispatch => {
-  const url = `http://www.omdbapi.com/?apikey=${APIKEY}&s=${state.dataSearch}&page=${page}&type=${typeSearch}`;
+  const url = `https://www.omdbapi.com/?apikey=${APIKEY}&s=${state.dataSearch}&page=${page}&type=${typeSearch}`;
 
   dispatch(fetchDataLoading());
 
