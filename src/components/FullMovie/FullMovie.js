@@ -1,4 +1,5 @@
 import React from 'react';
+import queryString from 'query-string';
 import { connect } from "react-redux";
 import Loader from '../Loader/Loader'; 
 import { fetchFullData } from "../../reducer/actions/fetchFullData";
@@ -6,7 +7,9 @@ import { fetchFullData } from "../../reducer/actions/fetchFullData";
 class FullMovie extends React.Component {
 
     componentDidMount(props){
-        this.props.getFullData(this.props.id);
+
+        const params = queryString.parse(this.props.id.location.search);
+        this.props.getFullData(params.id);
     }
     
     render(){
@@ -61,6 +64,9 @@ class FullMovie extends React.Component {
         
     }
 } 
+
+
+
 
 const mapStateToProps = state => ({ state });
 const mapDispatchToProps = (dispatch) => ({
