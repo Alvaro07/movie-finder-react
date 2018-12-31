@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import MainResults from "../MainResults/MainResults";
 import FullMovie from "../FullMovie/FullMovie";
+import NoMatch from "../NoMatch/NoMatch";
 
 // App component
 
@@ -20,8 +21,13 @@ class App extends React.Component {
 
         <main className="main">
           <Switch>
-            <Route path="/films" render={() => <MainResults type="movie" />} />
             <Route
+              exact
+              path="/films"
+              render={() => <MainResults type="movie" />}
+            />
+            <Route
+              exact
               path="/tv-series"
               render={() => <MainResults type="series" />}
             />
@@ -30,7 +36,9 @@ class App extends React.Component {
               render={e => <FullMovie id={e} />}
             />
 
-            <Redirect from="/" to="/films" />
+            <Redirect exact from="/" to="/films" />
+            <Route component={NoMatch} />
+            
           </Switch>
         </main>
       </div>
