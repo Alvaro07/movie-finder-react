@@ -23,20 +23,21 @@ class App extends React.Component {
           <Switch>
             <Route
               exact
-              path="/films"
+              path="/movie-finder-react/films"
               render={() => <MainResults type="movie" />}
             />
             <Route
               exact
-              path="/tv-series"
+              path="/movie-finder-react/tv-series"
               render={() => <MainResults type="series" />}
             />
             <Route
-              path="/full-content/:title"
+              path="/movie-finder-react/full-content/:title"
               render={e => <FullMovie id={e} />}
             />
 
-            <Redirect exact from="/" to="/films" />
+            <Redirect exact from="/" to="/movie-finder-react/films" />
+            <Redirect exact from="/movie-finder-react/" to="/movie-finder-react/films" />
             <Route component={NoMatch} />
             
           </Switch>

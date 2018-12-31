@@ -2,17 +2,33 @@ import React from "react";
 import queryString from "query-string";
 import { connect } from "react-redux";
 import Loader from "../Loader/Loader";
+import NoMatch from "../NoMatch/NoMatch";
 import { fetchFullData } from "../../reducer/actions/fetchFullData";
 
 class FullMovie extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      noMovie: false
+    }
+
+  }
+
   componentDidMount(props) {
     const params = queryString.parse(this.props.id.location.search);
     this.props.getFullData(params.id);
+    this.setState ({ noMovie: this.props.id.location.search.length !== 13 ? true : false } ) 
   }
 
   render() {
-    if (!this.props.state.fullContent) {
+    
+    if ( this.state.noMovie ) { 
+      return <NoMatch />;
+
+    } else if (!this.props.state.fullContent) {
       return <Loader />;
+
     } else {
       const webSite =
         this.props.state.fullContent.Website === "N/A"
