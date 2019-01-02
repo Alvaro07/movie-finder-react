@@ -92,3 +92,13 @@
     padding: 15px 0;
   }
 }
+
+/*/ Animation /*/
+.full-movie-animation-appear {
+  opacity: 0.01;
+}
+
+.full-movie-animation-appear.full-movie-animation-appear-active {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}

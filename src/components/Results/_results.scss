@@ -21,18 +21,24 @@
 
     li {
       border-radius: 5px;
-      background-color: white;
       overflow: hidden;
       box-shadow: 1px 1px 10px 0px rgba(#d4d6da, 0.5);
     }
   }
 
   &__item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
     &__content {
+      flex: 1;
       padding: 15px;
+      background-color: white;
     }
 
     &__image {
+      flex: 1;
       background-position: center;
       background-size: cover;
       width: 100%;
@@ -85,4 +91,14 @@
       }
     }
   }
+}
+
+/*/ Animation /*/
+.results-animation-appear {
+  opacity: 0.01;
+}
+
+.results-animation-appear.results-animation-appear-active {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
 }

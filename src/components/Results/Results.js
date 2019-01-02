@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { resetFullContent } from "../../reducer/reducer";
 import { fetchData } from "../../reducer/actions/fetchData";
+import { CSSTransitionGroup } from "react-transition-group";
 
 /**
  * Functional Component => Results Item
@@ -47,14 +48,22 @@ class Results extends React.Component {
       <section className="results">
         <ul className="results__list">
           {this.props.state.data.map((value, i) => (
-            <li key={i}>
-              <ResultsItem
-                onClick={() => this.props.resetFullContent()}
-                link={value.imdbID}
-                poster={value.Poster}
-                title={value.Title}
-              />
-            </li>
+              <CSSTransitionGroup
+                transitionName="results-animation"
+                transitionAppear={true}
+                transitionAppearTimeout={500}
+                transitionEnter={false}
+                transitionLeave={false}
+                component="li" 
+                key={i}
+              >
+                <ResultsItem
+                  onClick={() => this.props.resetFullContent()}
+                  link={value.imdbID}
+                  poster={value.Poster}
+                  title={value.Title}
+                />
+              </CSSTransitionGroup>
           ))}
         </ul>
 
